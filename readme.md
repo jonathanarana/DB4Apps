@@ -43,7 +43,7 @@ Modifica la estructura de la base de datos.
 ``ALTER TABLE `personas` ADD `edad` DATE NOT NULL AFTER `nombre`;``
  
 ### TRUNCATE
-Borra objetos de la base de datos, pero, **conserva la estructura**
+Borra **Todos** los registros de una tabla, pero, **conserva la estructura**
 
 **Ejemplo**
 
