@@ -1,3 +1,4 @@
+
 # DDL y DML
 Las sentencias SQL se dividen en dos categorías:
 
@@ -30,8 +31,8 @@ Su función es mostrar la estructura de una tabla.
 Modifica la estructura de la base de datos.
 **Ejemplo:** 
 ``ALTER TABLE `personas` ADD `edad` DATE NOT NULL AFTER `nombre`;``
-
-### TRUNCATE {#TRUNCATE}
+ 
+### TRUNCATE
 Borra objetos de la base de datos, pero, **conserva la estructura**
 **Ejemplo**
 `TRUNCATE personas;`
@@ -62,9 +63,9 @@ Recupera datos desde la base de datos.
 ### UPDATE
 Modifica datos existentes dentro de una tabla.
 **Ejemplo:**
-``UPDATE `personas` SET `amaterno` = 'Sánchez' WHERE `personas`.`id` = 1;``
+``UPDATE `personas` SET `amaterno` = 'Sánchez' WHERE `id` = 1;``
 
 ### DELETE 
 Elimina registros de la tabla, generalmente se limita su acción con el modificador *WHERE*, de lo contrario, **Tendrá el mismo efecto que [TRUNCATE](#TRUNCATE)**.
 **Ejemplo:**
-``DELETE FROM `personas` WHERE `personas`.`id` = 2;``
+``DELETE FROM `personas` WHERE `id` = 2;``
