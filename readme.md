@@ -66,6 +66,6 @@ Modifica datos existentes dentro de una tabla.
 ``UPDATE `personas` SET `amaterno` = 'Sánchez' WHERE `id` = 1;``
 
 ### DELETE 
-Elimina registros de la tabla, generalmente se limita su acción con el modificador *WHERE*, de lo contrario, **Tendrá el mismo efecto que [TRUNCATE](#TRUNCATE)**.
+Elimina registros de la tabla, generalmente se limita su acción con el modificador *WHERE*, de lo contrario, **Tendrá el mismo efecto que [TRUNCATE](#truncate)**.
 **Ejemplo:**
 ``DELETE FROM `personas` WHERE `id` = 2;``
