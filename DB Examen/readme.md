@@ -1,15 +1,23 @@
 # Base de datos de Prueba
+
 Esta carpeta contiene un volcado de la base de datos proporcionada por el profesor en la cual se corrigieron los siguientes errores:
 - Sintaxis en la creación de las tablas
 - Corrección de nombre y referencia en la taba *users*
 
 ## Consultas
 1. Obtener **todos** los países con la cantidad de publicaciones asociadas
+    Sentencia:
+
+    `SELECT countries.countryName, COUNT(posts.user_id) AS nPosts  FROM countries JOIN users ON countries.id = users.country_id LEFT JOIN posts ON  users.id = posts.user_id GROUP BY countries.countryName`
+
+    Resultado:
+
+    ![Consulta1](consulta1.png)
 
 2. Obtener el listado de países con el conteo de usuarios registrados por cada uno
     Sentencia:
 
-    
+    `SELECT countries.countryName, COUNT(users.country_id) FROM countries JOIN users ON countries.id = users.country_id GROUP BY countries.countryName`
 
     Resultado:
 
@@ -29,7 +37,7 @@ Esta carpeta contiene un volcado de la base de datos proporcionada por el profes
 
     Sentencia:
 
-    `SELECT users.userName, COUNT(posts.id) AS nPosts FROM users JOIN posts ON users.id = posts.user_id GROUP BY posts.user_id`
+    `SELECT users.userName, COUNT(posts.id) AS nPosts FROM users JOIN posts ON users.id = posts.user_id GROUP BY users.userName`
 
     Resultado:
 
@@ -39,6 +47,6 @@ Esta carpeta contiene un volcado de la base de datos proporcionada por el profes
 
     Sentencia:
 
-    `SELECT users.userName, COUNT(posts.user_id) AS nPosts FROM posts JOIN users ON posts.user_id = users.id GROUP BY posts.user_id HAVING COUNT(posts.user_id) > 3`
+    `SELECT users.userName, COUNT(posts.user_id) AS nPosts FROM posts JOIN users ON posts.user_id = users.id GROUP BY users.userName_id HAVING COUNT(posts.user_id) > 3`
 
     Resultado: 0 registros
